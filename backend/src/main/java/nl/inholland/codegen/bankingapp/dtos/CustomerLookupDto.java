@@ -5,4 +5,4 @@ public record CustomerLookupDto(
     String firstName,
     String lastName,
     String iban
-) {}
+)

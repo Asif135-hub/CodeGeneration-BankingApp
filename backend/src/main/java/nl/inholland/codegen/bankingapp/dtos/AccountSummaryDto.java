@@ -5,4 +5,4 @@ public record AccountSummaryDto(
     String iban,
     String accountType,
     int balanceCents
-) {}
+)
