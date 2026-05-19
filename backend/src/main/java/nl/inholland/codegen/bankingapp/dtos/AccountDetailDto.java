@@ -8,4 +8,4 @@ public record AccountDetailDto(
     long customerId,
     int absoluteLimitCents,
     int dailyLimitCents
-) {}
+)
