@@ -9,4 +9,4 @@ public record TransactionDto(
     int amountCents,
     OffsetDateTime timestamp,
     String initiatedBy
-)
+){}
