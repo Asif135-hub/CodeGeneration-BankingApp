@@ -1,12 +1,4 @@
 package nl.inholland.codegen.bankingapp.dtos;
-
-import java.time.OffsetDateTime;
-
-public record TransactionDto(
-    long transactionId,
-    String fromIban,
-    String toIban,
-    int amountCents,
-    OffsetDateTime timestamp,
-    String initiatedBy
-)
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+public record TransactionDto(Long id, String fromIban, String toIban, BigDecimal amount, LocalDateTime timestamp, String type, String initiatedBy) {}

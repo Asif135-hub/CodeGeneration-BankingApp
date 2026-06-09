@@ -1,11 +1,14 @@
 package nl.inholland.codegen.bankingapp.security;
 
-import io.jsonwebtoken.*;
-import nl.inholland.codegen.bankingapp.models.User;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
+import io.jsonwebtoken.JwtException;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import nl.inholland.codegen.bankingapp.models.User;
 
 @Service
 public class JwtService {
@@ -20,6 +23,8 @@ public class JwtService {
         return Jwts.builder()
             .setSubject(user.getEmail())
             .claim("role", user.getRole().name())
+            .claim("firstName", user.getFirstName())
+            .claim("lastName", user.getLastName())
             .setIssuedAt(new Date())
             .setExpiration(new Date(System.currentTimeMillis() + expirationMs))
             .signWith(SignatureAlgorithm.HS256, secret)

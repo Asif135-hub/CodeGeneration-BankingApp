@@ -1,24 +1,41 @@
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\BankingappApplication.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\config\H2ConsoleConfig.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\config\SecurityConfig.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\controllers\AuthController.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\controllers\CustomerController.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\controllers\TransactionController.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\dtos\AccountDetailDto.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\dtos\AccountSummaryDto.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\dtos\CustomerLookupDto.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\dtos\LoginRequestDTO.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\dtos\LoginResponseDTO.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\dtos\RegisterRequestDTO.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\dtos\TransactionDto.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\dtos\UserResponseDTO.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\exceptions\AuthenticationException.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\exceptions\BadRequestException.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\exceptions\GlobalExceptionHandler.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\models\Customer.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\models\User.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\repositories\CustomerRepository.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\repositories\UserRepository.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\security\JwtService.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\services\UserService.java
-C:\Users\asift\Documents\New folder\CodeGeneration-BankingApp\backend\src\main\java\nl\inholland\codegen\bankingapp\utils\PaginatedList.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/BankingappApplication.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/config/DotEnvConfig.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/config/H2ConsoleConfig.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/config/SecurityConfig.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/config/SwaggerConfig.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/controllers/AtmController.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/controllers/AuthController.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/controllers/CustomerController.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/controllers/TransactionController.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/dtos/AccountDetailDto.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/dtos/AccountSummaryDto.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/dtos/ApproveCustomerRequest.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/dtos/AtmLoginRequestDto.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/dtos/AtmLoginResponseDTO.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/dtos/AtmTransactionRequestDto.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/dtos/CustomerListDto.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/dtos/CustomerLookupDto.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/dtos/LoginRequestDTO.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/dtos/LoginResponseDTO.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/dtos/RegisterRequestDTO.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/dtos/TransactionDto.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/dtos/TransactionFilterRequestDto.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/dtos/TransferRequest.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/dtos/UpdateLimitsRequest.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/dtos/UserResponseDTO.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/exceptions/AuthenticationException.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/exceptions/BadRequestException.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/exceptions/GlobalExceptionHandler.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/models/Account.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/models/Transaction.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/models/User.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/repositories/AccountRepository.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/repositories/TransactionRepository.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/repositories/UserRepository.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/security/JwtAuthFilter.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/security/JwtService.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/seeder/DataSeederService.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/services/AccountService.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/services/AtmService.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/services/UserService.java
+/Users/mavengers/Mavengers/projects/QTECH/java/banking-app-complete/src/main/java/nl/inholland/codegen/bankingapp/utils/PaginatedList.java

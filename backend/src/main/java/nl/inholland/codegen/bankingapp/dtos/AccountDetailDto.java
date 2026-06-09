@@ -1,11 +1,3 @@
 package nl.inholland.codegen.bankingapp.dtos;
-
-public record AccountDetailDto(
-    long accountId,
-    String iban,
-    String accountType,
-    int balanceCents,
-    long customerId,
-    int absoluteLimitCents,
-    int dailyLimitCents
-)
+import java.math.BigDecimal;
+public record AccountDetailDto(Long id, String iban, BigDecimal balance, BigDecimal dailyLimit, BigDecimal absoluteLimit, Long userId) {}

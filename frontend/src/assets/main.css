@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Audiowide|Dangrek:wght@400;700&display=swap');
+
+body {
+  font-family: "Quicksand", sans-serif;
+  background-color: #c8c8c8;
+}
+
+@keyframes moveEuro {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(100% - 24px);
+  }
+}
+.euro-sign {
+  position: absolute;
+  font-size: 24px;
+  color: #F7E3DB;
+  animation: moveEuro 5s linear infinite;
+}
