@@ -70,7 +70,7 @@ export default {
     fetchTransactions() {
 
       axios
-          .get("http://localhost:8080/transactions")
+          .get("http://localhost:8080/customers/transactions")
           .then((response) => {
             this.transactions = response.data;
           })

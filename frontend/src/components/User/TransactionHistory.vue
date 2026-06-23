@@ -2,7 +2,7 @@
   <div class="m-3">
     <h2>Transaction History</h2>
     <form @submit.prevent="fetchTransactions()"
-          class="row g-3 mb-3">
+ class="row g-3 mb-3">
       <div class="col-md-3">
         <label class="form-label">Start Date</label>
         <input type="date" class="form-control" v-model="filters.start">
@@ -35,20 +35,20 @@
     <div v-if="loading" class="text-center"><div class="spinner-border"></div></div>
     <table v-else class="table table-striped table-hover">
       <thead>
-      <tr>
-        <th>Date</th><th>From IBAN</th><th>To IBAN</th><th>Amount</th><th>Type</th><th>Initiated By</th>
-      </tr>
+        <tr>
+          <th>Date</th><th>From IBAN</th><th>To IBAN</th><th>Amount</th><th>Type</th><th>Initiated By</th>
+        </tr>
       </thead>
       <tbody>
-      <tr v-if="transactions.length === 0"><td colspan="6" class="text-center">No transactions found</td></tr>
-      <tr v-for="tx in transactions" :key="tx.id">
-        <td>{{ new Date(tx.timestamp).toLocaleString() }}</td>
-        <td>{{ tx.fromIban || '-' }}</td>
-        <td>{{ tx.toIban || '-' }}</td>
-        <td>€{{ tx.amount }}</td>
-        <td><span :class="badgeClass(tx.type)" class="badge">{{ tx.type }}</span></td>
-        <td>{{ tx.initiatedBy }}</td>
-      </tr>
+        <tr v-if="transactions.length === 0"><td colspan="6" class="text-center">No transactions found</td></tr>
+        <tr v-for="tx in transactions" :key="tx.id">
+          <td>{{ new Date(tx.timestamp).toLocaleString() }}</td>
+          <td>{{ tx.fromIban || '-' }}</td>
+          <td>{{ tx.toIban || '-' }}</td>
+          <td>€{{ tx.amount }}</td>
+          <td><span :class="badgeClass(tx.type)" class="badge">{{ tx.type }}</span></td>
+          <td>{{ tx.initiatedBy }}</td>
+        </tr>
       </tbody>
     </table>
 
@@ -75,12 +75,12 @@ export default {
     async fetchTransactions(skipValidation = false) {
 
       if (
-          !skipValidation &&
-          !this.filters.start &&
-          !this.filters.end &&
-          !this.filters.fromIban &&
-          (this.filters.amount === null || this.filters.amount === '') &&
-          !this.filters.amountOp
+        !skipValidation &&
+        !this.filters.start &&
+        !this.filters.end &&
+        !this.filters.fromIban &&
+        (this.filters.amount === null || this.filters.amount === '') &&
+        !this.filters.amountOp
       ) {
         alert('Please enter at least one filter before searching.');
         return;
@@ -95,7 +95,7 @@ export default {
         if (this.filters.fromIban) params.fromIban = this.filters.fromIban;
         if (this.filters.amount) params.amount = this.filters.amount;
         if (this.filters.amountOp) params.amountOp = this.filters.amountOp;
-        const response = await api.get('/transactions', { params });
+        const response = await api.get('/customers/transactions', { params });
         this.transactions = response.data.content;
         this.hasMore = !response.data.last;
       } catch (e) {

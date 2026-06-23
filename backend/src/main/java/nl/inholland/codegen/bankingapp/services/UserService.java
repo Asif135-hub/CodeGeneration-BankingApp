@@ -1,7 +1,5 @@
 package nl.inholland.codegen.bankingapp.services;
 
-import java.math.BigDecimal;
-
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +9,6 @@ import nl.inholland.codegen.bankingapp.dtos.RegisterRequestDTO;
 import nl.inholland.codegen.bankingapp.dtos.UserResponseDTO;
 import nl.inholland.codegen.bankingapp.exceptions.AuthenticationException;
 import nl.inholland.codegen.bankingapp.exceptions.BadRequestException;
-import nl.inholland.codegen.bankingapp.models.Account;
 import nl.inholland.codegen.bankingapp.models.User;
 import nl.inholland.codegen.bankingapp.repositories.AccountRepository;
 import nl.inholland.codegen.bankingapp.repositories.UserRepository;
@@ -25,18 +22,23 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AccountService accountService;
+    private final IbanGeneratorService ibanGeneratorService;
 
     public UserService(UserRepository userRepository,
             AccountRepository accountRepository,
             PasswordEncoder passwordEncoder,
             JwtService jwtService,
-            AccountService accountService
+            AccountService accountService,
+            IbanGeneratorService ibanGeneratorService
+
             ) {
         this.userRepository = userRepository;
         this.accountRepository = accountRepository;
         this.passwordEncoder = passwordEncoder;
         this.jwtService = jwtService;
         this.accountService = accountService;
+        this.ibanGeneratorService = ibanGeneratorService;
+
 
     }
 
@@ -59,10 +61,7 @@ public class UserService {
             throw new BadRequestException("BSN is already in use");
         }
 
-        if (accountRepository.findByIban(request.iban()).isPresent()) {
-            throw new BadRequestException("IBAN already in use");
-        }
-
+       
         User user = new User();
         user.setFirstName(request.firstName());
         user.setLastName(request.lastName());
@@ -74,8 +73,8 @@ public class UserService {
         user.setStatus(User.CustomerStatus.APPROVED);
 
         User savedUser = userRepository.save(user);
-
-       accountService.createAccount(savedUser, request.iban());
+        String iban = ibanGeneratorService.generate();
+        accountService.createAccount(savedUser, iban);
 
         return new UserResponseDTO(
                 savedUser.getUserId(),

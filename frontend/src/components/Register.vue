@@ -42,11 +42,7 @@
                   <input v-model="form.phoneNumber" type="text" class="form-control"  placeholder="31612345678"/>
                 </div>
               </div>
-              <div class="mb-3">
-                <label class="form-label">IBAN (e.g. NL91ABNA0417164300)</label>
-                <input v-model="form.iban" type="text" class="form-control" required placeholder="NL91ABNA0417164300" />
-                <div v-if="ibanError" class="text-danger">{{ ibanError }}</div>
-              </div>
+              
               <div v-if="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
               <button type="submit" class="btn btn-primary btn-lg w-100" :disabled="!passwordsMatch">Register</button>
               <button type="button" class="btn btn-secondary btn-lg w-100 mt-2" @click="$router.push('/login')">Back to Login</button>
@@ -69,11 +65,9 @@ export default {
   name: 'Register',
   data() {
     return {
-      form: { firstName: '', lastName: '', email: '', password: '', bsn: '', phoneNumber: '', iban: '' },
-      confirmPassword: '',
+      form: { firstName: '', lastName: '', email: '', password: '', bsn: '', phoneNumber: '' },      confirmPassword: '',
       showSuccessMessage: false,
       errorMessage: '',
-      ibanError: '',
     };
   },
   computed: {
@@ -82,12 +76,7 @@ export default {
   methods: {
     async registerCustomer() {
       this.errorMessage = '';
-      this.ibanError = '';
-      const ibanRegex = /^NL\d{2}[A-Z]{4}\d{10}$/;
-      if (!ibanRegex.test(this.form.iban)) {
-        this.ibanError = 'Invalid IBAN format. Example: NL91ABNA0417164300';
-        return;
-      }
+     
       try {
         await api.post('/auth/register', this.form);
         this.showSuccessMessage = true;

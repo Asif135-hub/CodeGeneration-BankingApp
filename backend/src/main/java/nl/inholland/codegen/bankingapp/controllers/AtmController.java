@@ -2,7 +2,6 @@ package nl.inholland.codegen.bankingapp.controllers;
 
 import java.util.Map;
 
-import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,8 +14,6 @@ import jakarta.validation.Valid;
 import nl.inholland.codegen.bankingapp.dtos.AtmLoginRequestDto;
 import nl.inholland.codegen.bankingapp.dtos.AtmTransactionRequestDto;
 import nl.inholland.codegen.bankingapp.dtos.LoginResponseDTO;
-import nl.inholland.codegen.bankingapp.dtos.TransactionFilterRequestDto;
-import nl.inholland.codegen.bankingapp.models.Transaction;
 import nl.inholland.codegen.bankingapp.services.AtmService;
 
 @RestController
@@ -52,9 +49,5 @@ public class AtmController {
 
     }
 
-    @PostMapping("/transactions/search")
-    @Operation(summary = "Search transactions", description = "Filter transactions by date range, amount, or IBAN")
-    public ResponseEntity<Page<Transaction>> search(@RequestBody TransactionFilterRequestDto request) {
-        return ResponseEntity.ok(atmService.filterTransactions(request));
-    }
+   
 }

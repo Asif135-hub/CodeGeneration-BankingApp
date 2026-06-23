@@ -51,7 +51,7 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.GET,  "/customers/accounts").hasRole("CUSTOMER")
                 .requestMatchers(HttpMethod.GET,  "/customers/accounts/{id}").hasAnyRole("CUSTOMER","EMPLOYEE")
                 .requestMatchers(HttpMethod.GET,  "/customers/search").hasAnyRole("CUSTOMER","EMPLOYEE")
-                .requestMatchers("/transactions/**").hasAnyRole("CUSTOMER","EMPLOYEE")
+                .requestMatchers("/customers/transactions/**").hasAnyRole("CUSTOMER","EMPLOYEE")
                 .anyRequest().authenticated()
             )
             .formLogin(AbstractHttpConfigurer::disable)

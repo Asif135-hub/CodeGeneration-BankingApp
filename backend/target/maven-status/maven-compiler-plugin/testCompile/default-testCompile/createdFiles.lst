@@ -1,1 +1,3 @@
-nl/inholland/codegen/bankingapp/BankingappApplicationTests.class
+nl\inholland\codegen\bankingapp\services\UserServiceTest.class
+nl\inholland\codegen\bankingapp\BankingappApplicationTests.class
+nl\inholland\codegen\bankingapp\services\AtmServiceTest.class

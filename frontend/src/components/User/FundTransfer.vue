@@ -82,7 +82,7 @@ export default {
     async transferFunds() {
       this.successMsg = ''; this.transferError = '';
       try {
-        const res = await api.post('/transactions', this.transfer);
+        const res = await api.post('/customers/transactions', this.transfer);
         this.successMsg = `Transferred €${res.data.amount} successfully!`;
         await this.loadAccounts();
       } catch (e) {

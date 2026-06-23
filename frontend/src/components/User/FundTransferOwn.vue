@@ -40,7 +40,7 @@ export default {
       this.successMsg = ''; this.errorMsg = '';
       if (this.transfer.fromIban === this.transfer.toIban) { this.errorMsg = 'From and To accounts must be different'; return; }
       try {
-        const res = await api.post('/transactions', this.transfer);
+        const res = await api.post('/customers/transactions', this.transfer);
         this.successMsg = `Transferred €${res.data.amount} successfully!`;
         await this.loadAccounts();
       } catch (e) { this.errorMsg = e.response?.data?.message || 'Transfer failed'; }

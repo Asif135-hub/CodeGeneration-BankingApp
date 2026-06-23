@@ -9,7 +9,6 @@ public record RegisterRequestDTO(
 
         @NotBlank(message = "First name is required") @Size(min = 2, max = 50, message = "First name must be between 2 and 50 characters") String firstName,
 
-        @NotBlank(message = "IBAN is required") @Pattern(regexp = "^NL\\d{2}[A-Z]{4}\\d{10}$", message = "Invalid IBAN format. Example: NL91ABNA0417164300") String iban,
 
         @NotBlank(message = "Last name is required") @Size(min = 2, max = 50, message = "Last name must be between 2 and 50 characters") String lastName,
 

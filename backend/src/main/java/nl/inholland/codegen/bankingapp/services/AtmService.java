@@ -3,19 +3,12 @@ package nl.inholland.codegen.bankingapp.services;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import jakarta.persistence.criteria.Predicate;
 import jakarta.transaction.Transactional;
 import nl.inholland.codegen.bankingapp.dtos.LoginResponseDTO;
-import nl.inholland.codegen.bankingapp.dtos.TransactionFilterRequestDto;
 import nl.inholland.codegen.bankingapp.exceptions.AuthenticationException;
 import nl.inholland.codegen.bankingapp.exceptions.BadRequestException;
 import nl.inholland.codegen.bankingapp.models.Account;
@@ -70,6 +63,12 @@ public class AtmService {
             throw new BadRequestException("Insufficient balance");
         }
 
+
+        // Check if withdrawal would breach absolute limit
+        if (account.getBalance().subtract(amount).compareTo(account.getAbsoluteLimit()) < 0) {
+                throw new BadRequestException("Withdrawal would breach absolute limit");
+        }
+
         account.setBalance(account.getBalance().subtract(amount));
         updateDailyLimit(account, amount);
         saveTransaction(account.getIban(), null, amount, "WITHDRAW");
@@ -90,9 +89,7 @@ public class AtmService {
     }
 
     private void validateLimits(Account account, BigDecimal amount) {
-        if (amount.compareTo(account.getAbsoluteLimit()) > 0) {
-            throw new BadRequestException("Amount exceeds absolute limit");
-        }
+     
         resetDailyLimitIfNeeded(account);
         BigDecimal total = account.getDailyTransferredAmount().add(amount);
         if (total.compareTo(account.getDailyLimit()) > 0) {
@@ -123,27 +120,5 @@ public class AtmService {
         transactionRepository.save(tx);
     }
 
-    public Page<Transaction> filterTransactions(TransactionFilterRequestDto request) {
-        int page = request.page() != null ? request.page() : 0;
-        int size = request.size() != null ? request.size() : 10;
-
-        Specification<Transaction> spec = (root, query, cb) -> {
-            List<Predicate> predicates = new ArrayList<>();
-            if (request.startDate() != null)
-                predicates.add(cb.greaterThanOrEqualTo(root.get("timestamp"), request.startDate()));
-            if (request.endDate() != null)
-                predicates.add(cb.lessThanOrEqualTo(root.get("timestamp"), request.endDate()));
-            if (request.minAmount() != null)
-                predicates.add(cb.greaterThanOrEqualTo(root.get("amount"), request.minAmount()));
-            if (request.maxAmount() != null)
-                predicates.add(cb.lessThanOrEqualTo(root.get("amount"), request.maxAmount()));
-            if (request.iban() != null)
-                predicates.add(cb.or(
-                        cb.equal(root.get("fromIban"), request.iban()),
-                        cb.equal(root.get("toIban"), request.iban())));
-            return cb.and(predicates.toArray(new Predicate[0]));
-        };
-
-        return transactionRepository.findAll(spec, PageRequest.of(page, size));
-    }
+ 
 }

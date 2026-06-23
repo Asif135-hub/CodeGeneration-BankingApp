@@ -58,7 +58,7 @@ public class AccountService {
         account.setIban(iban);
         account.setBalance(BigDecimal.ZERO);
         account.setDailyLimit(BigDecimal.valueOf(500));
-        account.setAbsoluteLimit(BigDecimal.valueOf(2000));
+        account.setAbsoluteLimit(BigDecimal.valueOf(100));
         account.setUser(user);
 
         return accountRepository.save(account);

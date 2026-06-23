@@ -68,7 +68,7 @@ export default {
 
       axios
         .post(
-          "http://localhost:8080/transactions",
+          "http://localhost:8080/customers",
           {
             fromAccountIban: this.fromAccountIban,
             toAccountIban: this.toAccountIban,
