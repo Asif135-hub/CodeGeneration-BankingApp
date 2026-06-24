@@ -1,0 +1,52 @@
+﻿.atm-wrapper { min-height: 100vh; background: #f4f6f9; }
+
+/* Top bar */
+.atm-topbar { background: linear-gradient(135deg, #0d3349 0%, #1a4a6b 100%); }
+.text-teal { color: #60BFC1; }
+.btn-logout {
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+  color: #fff; padding: 8px 18px; border-radius: 50px; font-size: 0.85rem;
+  font-weight: 600; cursor: pointer; transition: all 0.2s;
+}
+.btn-logout:hover { background: rgba(255,80,80,0.3); border-color: transparent; }
+
+.atm-body { max-width: 960px; margin: 0 auto; }
+
+/* Info card */
+.info-card { background: #fff; box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
+
+/* Account cards */
+.current-card { background: linear-gradient(135deg, #1a4a7a 0%, #2d6fad 100%); color: #fff; }
+.savings-card  { background: linear-gradient(135deg, #1a6b4a 0%, #2da870 100%); color: #fff; }
+.acct-type-badge { background: rgba(255,255,255,0.2); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+.iban-text { font-size: 0.85rem; opacity: 0.8; font-family: monospace; letter-spacing: 0.5px; }
+.balance-label { font-size: 0.75rem; opacity: 0.7; text-transform: uppercase; letter-spacing: 1px; }
+.balance-amount { font-size: 2rem; font-weight: 700; }
+
+.atm-action-btn {
+  border: none; border-radius: 10px; padding: 10px 0; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.2s;
+}
+.deposit-btn  { background: rgba(255,255,255,0.9); color: #1a6b4a; }
+.withdraw-btn { background: rgba(255,255,255,0.2); color: #fff; border: 1px solid rgba(255,255,255,0.4); }
+.deposit-btn:hover  { background: #fff; }
+.withdraw-btn:hover { background: rgba(255,255,255,0.3); }
+.withdraw-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Quick actions */
+.quick-action { background: #fff; border: 1px solid #e9ecef; transition: all 0.2s; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+.quick-action:hover { border-color: #60BFC1; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(96,191,193,0.2); }
+.action-icon { font-size: 1.8rem; }
+
+/* Modal */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+  display: flex; align-items: center; justify-content: center; z-index: 1000;
+}
+.modal-box { background: #fff; width: 100%; max-width: 420px; box-shadow: 0 8px 40px rgba(0,0,0,0.2); }
+.btn-close-modal { background: #f1f3f5; border: none; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-size: 0.85rem; }
+.iban-pill { background: #f1f3f5; border-radius: 20px; padding: 6px 16px; font-family: monospace; font-size: 0.85rem; display: inline-block; }
+.btn-cancel { background: #f1f3f5; border: none; padding: 12px; border-radius: 10px; font-weight: 600; cursor: pointer; }
+.btn-confirm { border: none; padding: 12px; border-radius: 10px; font-weight: 600; color: #fff; cursor: pointer; transition: opacity 0.2s; }
+.btn-confirm:disabled { opacity: 0.6; cursor: not-allowed; }
+.btn-confirm-deposit  { background: linear-gradient(135deg, #1a6b4a, #2da870); }
+.btn-confirm-withdraw { background: linear-gradient(135deg, #7a1a1a, #ad2d2d); }

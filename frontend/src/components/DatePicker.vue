@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div>
     <label for="inputDOB" class="form-label form-text-lg">Date of Birth</label>
     <datepicker
@@ -14,16 +14,6 @@
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue';
-import Datepicker from 'vue3-datepicker';
+<script setup src="../assets/component-code/DatePicker.js"></script>
 
-const dob = ref(null);
-const dateFormat = 'yyyy-MM-dd';
-</script>
-
-<style scoped>
-  .form-text-lg {
-    font-size: 18px;
-  }
-</style>
+<style scoped src="../assets/component-code/DatePicker.css"></style>

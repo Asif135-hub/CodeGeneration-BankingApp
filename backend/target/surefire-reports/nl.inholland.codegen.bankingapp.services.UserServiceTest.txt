@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: nl.inholland.codegen.bankingapp.services.UserServiceTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.263 s -- in nl.inholland.codegen.bankingapp.services.UserServiceTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.264 s -- in nl.inholland.codegen.bankingapp.services.UserServiceTest

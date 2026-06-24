@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <section>
     <div class="container-fluid">
       <div class="row">
@@ -34,37 +34,6 @@
   </section>
 </template>
 
-<script>
-import { useUserStore } from '@/stores/User';
-import { useRouter } from 'vue-router';
+<script src="../assets/component-code/Login.js"></script>
 
-export default {
-  name: 'Login',
-  data() {
-    return { username: '', password: '', errors: { username: null, password: null, other: null } };
-  },
-  setup() {
-    return { router: useRouter(), userStore: useUserStore() };
-  },
-  methods: {
-    async validateLogin() {
-      this.errors = { username: null, password: null, other: null };
-      if (!this.username.trim()) { this.errors.username = 'Email is required'; return; }
-      if (!this.password.trim()) { this.errors.password = 'Password is required'; return; }
-      const result = await this.userStore.login({ username: this.username, password: this.password });
-      if (result.success) {
-        this.router.push(result.user.role === 'CUSTOMER' ? '/customerDashboard' : '/');
-      } else {
-        this.errors.other = result.message;
-      }
-    },
-  },
-};
-</script>
-
-<style scoped>
-.welcome-text { color: #60BFC1; font-size: 60px; font-weight: bold; }
-.login-form { background-color: #fff; padding: 40px; border-radius: 20px; width: 80%; max-width: 400px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-.btn-primary { background-color: #60BFC1; color: #fff; font-weight: bold; border: none; }
-.btn-primary:hover { background-color: #3a7e80; }
-</style>
+<style scoped src="../assets/component-code/Login.css"></style>

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <section>
     <div class="container-fluid">
       <div class="row">
@@ -31,29 +31,6 @@
   </section>
 </template>
 
-<script>
-import { useStore } from '@/stores/customer.js';
-import { useRouter } from 'vue-router';
+<script src="../../../assets/component-code/User/ATM/ATMLogin.js"></script>
 
-export default {
-  name: 'ATMLogin',
-  data() { return { email: '', password: '', loginError: null }; },
-  setup() { return { store: useStore(), router: useRouter() }; },
-  methods: {
-    async handleSubmit() {
-      this.loginError = null;
-      try {
-        await this.store.login(this.email, this.password);
-        this.router.push('/atm');
-      } catch (e) { this.loginError = e.message; }
-    },
-  },
-};
-</script>
-
-<style scoped>
-.welcome-text { color: #60BFC1; font-size: 50px; font-weight: bold; }
-.login-form { background-color: #fff; padding: 40px; border-radius: 5px; width: 80%; max-width: 400px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-.btn-primary { background-color: #00585a; color: #fff; font-weight: bold; border: none; }
-.btn-primary:hover { background-color: #3a7e80; }
-</style>
+<style scoped src="../../../assets/component-code/User/ATM/ATMLogin.css"></style>

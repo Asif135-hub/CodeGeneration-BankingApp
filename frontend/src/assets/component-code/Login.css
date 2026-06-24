@@ -1,0 +1,4 @@
+﻿.welcome-text { color: #60BFC1; font-size: 60px; font-weight: bold; }
+.login-form { background-color: #fff; padding: 40px; border-radius: 20px; width: 80%; max-width: 400px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.btn-primary { background-color: #60BFC1; color: #fff; font-weight: bold; border: none; }
+.btn-primary:hover { background-color: #3a7e80; }

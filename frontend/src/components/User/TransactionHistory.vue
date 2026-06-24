@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="m-3">
     <h2>Transaction History</h2>
     <form @submit.prevent="fetchTransactions()"
@@ -45,7 +45,7 @@
           <td>{{ new Date(tx.timestamp).toLocaleString() }}</td>
           <td>{{ tx.fromIban || '-' }}</td>
           <td>{{ tx.toIban || '-' }}</td>
-          <td>€{{ tx.amount }}</td>
+          <td>â‚¬{{ tx.amount }}</td>
           <td><span :class="badgeClass(tx.type)" class="badge">{{ tx.type }}</span></td>
           <td>{{ tx.initiatedBy }}</td>
         </tr>
@@ -53,61 +53,11 @@
     </table>
 
     <div class="d-flex gap-2 mt-2">
-      <button class="btn btn-outline-secondary" :disabled="page === 0" @click="page--; fetchTransactions(skipValidation = true)">← Prev</button>
+      <button class="btn btn-outline-secondary" :disabled="page === 0" @click="page--; fetchTransactions(skipValidation = true)">â† Prev</button>
       <span class="align-self-center">Page {{ page + 1 }}</span>
-      <button class="btn btn-outline-secondary" :disabled="!hasMore" @click="page++; fetchTransactions(skipValidation = true)">Next →</button>
+      <button class="btn btn-outline-secondary" :disabled="!hasMore" @click="page++; fetchTransactions(skipValidation = true)">Next â†’</button>
     </div>
   </div>
 </template>
 
-<script>
-import api from '@/axios.js';
-
-export default {
-  name: 'TransactionHistory',
-  data() {
-    return {
-      filters: { start: '', end: '', fromIban: '', amount: null, amountOp: '' },
-      transactions: [], loading: false, page: 0, hasMore: false,
-    };
-  },
-  methods: {
-    async fetchTransactions(skipValidation = false) {
-
-      if (
-        !skipValidation &&
-        !this.filters.start &&
-        !this.filters.end &&
-        !this.filters.fromIban &&
-        (this.filters.amount === null || this.filters.amount === '') &&
-        !this.filters.amountOp
-      ) {
-        alert('Please enter at least one filter before searching.');
-        return;
-      }
-
-
-      this.loading = true;
-      try {
-        const params = { page: this.page, size: 10, sort: 'Descending' };
-        if (this.filters.start) params.start = this.filters.start;
-        if (this.filters.end) params.end = this.filters.end;
-        if (this.filters.fromIban) params.fromIban = this.filters.fromIban;
-        if (this.filters.amount) params.amount = this.filters.amount;
-        if (this.filters.amountOp) params.amountOp = this.filters.amountOp;
-        const response = await api.get('/customers/transactions', { params });
-        this.transactions = response.data.content;
-        this.hasMore = !response.data.last;
-      } catch (e) {
-        console.error(e);
-      } finally {
-        this.loading = false;
-      }
-    },
-    badgeClass(type) {
-      return { 'bg-success': type === 'DEPOSIT', 'bg-danger': type === 'WITHDRAW', 'bg-primary': type === 'TRANSFER' };
-    }
-  },
-  mounted() { this.fetchTransactions(true); },
-};
-</script>
+<script src="../../assets/component-code/User/TransactionHistory.js"></script>

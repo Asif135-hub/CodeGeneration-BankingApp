@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="pending-approval">
     <h1 class="welcome-text">Welcome to FAFA Bank</h1>
     <h2>Your account is pending approval</h2>
@@ -7,41 +7,7 @@
   </div>
 </template>
 
-<script>
-import { useUserStore } from '@/stores/User';
-import { useRouter } from 'vue-router';
-
-export default {
-  name: 'PendingApproval',
-  setup() {
-    const userStore = useUserStore();
-    const router = useRouter();
-
-    const logoutHandler = () => {
-      userStore.logout(); 
-      router.push('/'); 
-    };
-
-    return { logoutHandler };
-  }
-}
-</script>
+<script src="../assets/component-code/PendingApproval.js"></script>
 
 
-<style scoped>
-.pending-approval {
-  text-align: center;
-  margin-top: 50px;
-}
-.welcome-text {
-  color: #60BFC1;
-  font-size: 80px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 50px;
-}
-.btn-outline-dark{
-  margin-top: 30px;
-  font-size: 20px;
-}
-</style>
+<style scoped src="../assets/component-code/PendingApproval.css"></style>

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div>
     <h2 class="transactionHead">Transactions for {{ customerName }}</h2>
     <div v-if="transactions.length > 0">
@@ -31,66 +31,7 @@
     <button class="backBtn" @click="goBack">Back to Customers</button>
   </div>
 </template>
-  <script>
-import axios from "axios";
-import { onMounted, ref } from "vue";
-
-export default {
-  props: {
-    customerId: {
-      type: String,
-      required: true,
-    },
-    customerName: {
-      type: String,
-      required: true,
-    },
-  },
-  setup(props, { emit }) {
-    const transactions = ref([]);
-
-    onMounted(async () => {
-      try {
-        const response = await axios.get(
-          `http://localhost:8080/customers/${props.customerId}/transactions`
-        );
-        transactions.value = response.data;
-      } catch (error) {
-        console.error("Failed to fetch transactions:", error);
-      }
-    });
-
-    function goBack() {
-      emit("back");
-    }
-
-    return { transactions, goBack };
-  },
-};
-</script>
+  <script src="../../assets/component-code/Customers/CustomerTransaction.js"></script>
   
-<style scoped>
-.backBtn{
-    margin: auto 20px;
-}
-.transactionHead {
-  margin: auto 20px;
-}
-table {
-  border-collapse: collapse;
-  width: 90%;
-  margin: 40px 20px;
-}
-
-th,
-td {
-  border: 1px solid black;
-  padding: 8px;
-  text-align: left;
-}
-
-thead {
-  background-color: #f2f2f2;
-}
-</style>
+<style scoped src="../../assets/component-code/Customers/CustomerTransaction.css"></style>
   

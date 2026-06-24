@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <section>
     <div class="container py-5">
       <h2 class="welcome-text mb-5 text-center">Welcome to The ABN AMRO Bank</h2>
@@ -55,84 +55,6 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: "Home",
-};
-</script>
+<script src="../assets/component-code/Home.js"></script>
 
-<style scoped>
-/* Main Header */
-.welcome-text {
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: #007b8f;
-}
-
-/* Register Card */
-.register-box {
-  border: 2px solid #e0f7fa;
-  border-radius: 15px;
-  transition: transform 0.3s;
-  background-color: #f9f9f9;
-}
-.register-box:hover {
-  transform: translateY(-5px);
-}
-.register-box .card-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-.btn-custom {
-  background-color: #007b8f;
-  color: white;
-  font-size: 1.1rem;
-  padding: 10px 20px;
-  border-radius: 8px;
-}
-.btn-custom:hover {
-  background-color: #005f6b;
-}
-
-/* What We Offer */
-.what-we-offer-box {
-  border: 2px solid #e0f2f1;
-  border-radius: 15px;
-  padding: 20px;
-  background-color: #ffffff;
-}
-.what-we-offer-box .card-title {
-  font-size: 2rem;
-}
-
-/* Offer Images */
-.image-container {
-  position: relative;
-}
-.text-box {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: rgba(0, 123, 143, 0.9);
-  color: white;
-  padding: 10px;
-  font-size: 0.95rem;
-  text-align: center;
-}
-
-/* Login Box */
-.login-box {
-  background-color: #f5f5f5;
-  padding: 20px 30px;
-  border-radius: 15px;
-  font-size: 1.25rem;
-}
-.login-link {
-  color: #007b8f;
-  font-weight: bold;
-}
-.login-link:hover {
-  color: #005f6b;
-  text-decoration: underline;
-}
-</style>
+<style scoped src="../assets/component-code/Home.css"></style>

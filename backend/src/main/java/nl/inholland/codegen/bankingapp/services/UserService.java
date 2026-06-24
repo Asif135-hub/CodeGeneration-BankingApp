@@ -10,7 +10,6 @@ import nl.inholland.codegen.bankingapp.dtos.UserResponseDTO;
 import nl.inholland.codegen.bankingapp.exceptions.AuthenticationException;
 import nl.inholland.codegen.bankingapp.exceptions.BadRequestException;
 import nl.inholland.codegen.bankingapp.models.User;
-import nl.inholland.codegen.bankingapp.repositories.AccountRepository;
 import nl.inholland.codegen.bankingapp.repositories.UserRepository;
 import nl.inholland.codegen.bankingapp.security.JwtService;
 
@@ -18,14 +17,12 @@ import nl.inholland.codegen.bankingapp.security.JwtService;
 public class UserService {
 
     private final UserRepository userRepository;
-    private final AccountRepository accountRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AccountService accountService;
     private final IbanGeneratorService ibanGeneratorService;
 
     public UserService(UserRepository userRepository,
-            AccountRepository accountRepository,
             PasswordEncoder passwordEncoder,
             JwtService jwtService,
             AccountService accountService,
@@ -33,7 +30,6 @@ public class UserService {
 
             ) {
         this.userRepository = userRepository;
-        this.accountRepository = accountRepository;
         this.passwordEncoder = passwordEncoder;
         this.jwtService = jwtService;
         this.accountService = accountService;

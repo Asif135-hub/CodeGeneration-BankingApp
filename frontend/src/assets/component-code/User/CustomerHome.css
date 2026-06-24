@@ -1,0 +1,38 @@
+﻿.welcome-hero {
+  background: linear-gradient(135deg, #0d3349 0%, #1a4a6b 100%);
+}
+.text-teal { color: #60BFC1; }
+.text-muted-light { color: rgba(255,255,255,0.55); font-size: 0.9rem; }
+.hero-icon { font-size: 4rem; opacity: 0.3; }
+
+.info-card { background: #fff; box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
+
+.btn-view-accounts {
+  background: linear-gradient(135deg, #0d3349, #1a4a6b);
+  color: #fff;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 16px rgba(13,51,73,0.25);
+}
+.btn-view-accounts:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(13,51,73,0.35); }
+
+.btn-text { background: none; border: none; color: #60BFC1; font-weight: 600; cursor: pointer; font-size: 0.9rem; }
+
+.current-card { background: linear-gradient(135deg, #1a4a7a 0%, #2d6fad 100%); color: #fff; }
+.savings-card  { background: linear-gradient(135deg, #1a6b4a 0%, #2da870 100%); color: #fff; }
+.acct-type-badge { background: rgba(255,255,255,0.2); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+.iban-text { font-size: 0.85rem; opacity: 0.8; font-family: monospace; letter-spacing: 0.5px; }
+.balance-label { font-size: 0.75rem; opacity: 0.7; text-transform: uppercase; letter-spacing: 1px; }
+.balance-amount { font-size: 2rem; font-weight: 700; }
+.limit-box { background: rgba(255,255,255,0.15); }
+.limit-label { font-size: 0.7rem; opacity: 0.75; }
+.limit-value { font-weight: 600; font-size: 0.9rem; }
+
+.quick-action { background: #fff; border: 1px solid #e9ecef; transition: all 0.2s; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+.quick-action:hover { border-color: #60BFC1; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(96,191,193,0.2); }
+.action-icon { font-size: 1.8rem; }

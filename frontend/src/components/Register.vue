@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <section>
     <div class="container">
       <div v-if="!showSuccessMessage">
@@ -58,38 +58,6 @@
   </section>
 </template>
 
-<script>
-import api from '@/axios.js';
+<script src="../assets/component-code/Register.js"></script>
 
-export default {
-  name: 'Register',
-  data() {
-    return {
-      form: { firstName: '', lastName: '', email: '', password: '', bsn: '', phoneNumber: '' },      confirmPassword: '',
-      showSuccessMessage: false,
-      errorMessage: '',
-    };
-  },
-  computed: {
-    passwordsMatch() { return this.form.password === this.confirmPassword; }
-  },
-  methods: {
-    async registerCustomer() {
-      this.errorMessage = '';
-     
-      try {
-        await api.post('/auth/register', this.form);
-        this.showSuccessMessage = true;
-      } catch (error) {
-        this.errorMessage = error.response?.data?.message || JSON.stringify(error.response?.data) || 'Registration failed';
-      }
-    },
-  },
-};
-</script>
-
-<style scoped>
-.welcome-text { font-weight: bold; font-size: 40px; margin-top: 40px; }
-.btn-primary { background-color: #000; color: #fff; border: none; margin-top: 8px; }
-.btn-secondary { background-color: #000; color: #fff; border: none; }
-</style>
+<style scoped src="../assets/component-code/Register.css"></style>

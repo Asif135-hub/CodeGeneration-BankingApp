@@ -26,7 +26,6 @@ import nl.inholland.codegen.bankingapp.exceptions.AuthenticationException;
 import nl.inholland.codegen.bankingapp.exceptions.BadRequestException;
 import nl.inholland.codegen.bankingapp.models.Account;
 import nl.inholland.codegen.bankingapp.models.User;
-import nl.inholland.codegen.bankingapp.repositories.AccountRepository;
 import nl.inholland.codegen.bankingapp.repositories.UserRepository;
 import nl.inholland.codegen.bankingapp.security.JwtService;
 
@@ -34,7 +33,6 @@ import nl.inholland.codegen.bankingapp.security.JwtService;
 class UserServiceTest {
 
     @Mock private UserRepository userRepository;
-    @Mock private AccountRepository accountRepository;
     @Mock private PasswordEncoder passwordEncoder;
     @Mock private JwtService jwtService;
     @Mock private AccountService accountService;
